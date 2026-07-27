@@ -202,3 +202,28 @@ Logramos una arquitectura con Cloudfront + OAC, así que podemos dejar el bloque
 
 Tras tener el bucket creado, subiremos los archivos de nuestra página web, en mi caso es una web creada con IA para ahorrar tiempo en este pequeño laboratorio, es sencilla pero esta configuración y estructura puede entrar también dentro de páginas web de pymes etc.
 
+![alt text](image-7.png)
+---
+
+
+## Creación de la distribución de Cloudfront
+
+
+
+Cloudfront es un servicio de Content Delivery Network.  cachea contenido en cientos de Edge Locations repartidas por el mundo, para servirlo mucho más cerca y más rápido del usuario final que si viniera siempre desde el origen. Una **Distribution** define uno o varios **Origins** (S3, un ALB, o incluso un servidor HTTP externo fuera de AWS).
+
+![alt text](image-4.png)
+
+
+Cloudfront automáticamente nos crea una Política de Bucket, que es el conjunto de reglas de acceso para nuestro bucket. En este caso se aprueba el acceso al bucket al servicio de Cloudfront, pero ojo solo a cloudfront y sólo a este bucket.
+
+![alt text](image-8.png)
+
+---
+
+
+## Comprobación del dominio dado por Cloudfront
+https://d1prrhe2wjp8xa.cloudfront.net/
+![alt text](image-10.png)
+
+![alt text](image-11.png)
