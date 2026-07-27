@@ -1,0 +1,204 @@
+# Servicios AWS utilizados
+
+|Servicio|Función|
+|---|---|
+|**Amazon S3**|Almacena los archivos de la web estática.|
+|**CloudFront**|CDN que distribuye la web con mayor rendimiento y HTTPS.|
+|**IAM**|Permisos para Terraform y acceso seguro a AWS.|
+|**AWS CLI**|Permite autenticar Terraform mediante credenciales locales.|
+
+---
+
+# Flujo de funcionamiento
+
+```
+Usuario
+    │
+    ▼
+CloudFront
+    │
+    ▼
+S3 Bucket
+    │
+    ├── index.html
+    ├── style.css
+    └── script.js
+```
+
+---
+
+# Recursos que creará Terraform
+
+```
+terraform/
+
+provider.tf
+versions.tf
+main.tf
+variables.tf
+outputs.tf
+terraform.tfvars
+```
+
+Terraform desplegará automáticamente:
+
+```
+AWS
+
+├── S3 Bucket
+│
+├── Bucket Website Configuration
+│
+├── Bucket Policy
+│
+├── CloudFront Distribution
+│
+└── Outputs
+```
+
+---
+
+# Organización del laboratorio
+
+```
+01-static-website
+│
+├── terraform/
+│
+├── website/
+│
+├── diagrams/
+│
+├── images/
+│
+├── docs/
+│
+└── README.md
+```
+
+## Organización del laboratorio en Github
+
+``` text
+aws-labs
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── docs
+│   └── roadmap.md
+├── templates
+│   └── README-template.md
+└── labs
+    ├── 01-static-website
+    │   ├── README.md
+    │   ├── diagrams
+    │   │   ├── architecture.drawio
+    │   │   └── architecture.png
+    │   ├── docs
+    │   │   ├── architecture.md
+    │   │   ├── deployment.md
+    │   │   └── lessons-learned.md
+    │   ├── images
+    │   ├── scripts
+    │   │   └── deploy.ps1
+    │   ├── terraform
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   ├── provider.tf
+    │   │   ├── terraform.tfvars
+    │   │   ├── variables.tf
+    │   │   └── versions.tf
+    │   └── website
+    │       ├── index.html
+    │       ├── error.html
+    │       ├── css
+    │       │   └── style.css
+    │       ├── js
+    │       │   └── script.js
+    │       └── images
+    ├── 02-vpc
+    ├── 03-ec2
+    ├── 04-cloudwatch
+    ├── 05-iam
+    ├── 06-lambda
+    ├── 07-ecs
+    ├── 08-cicd
+    └── 09-final-project
+
+```
+
+
+## ¿Cómo funcionan los archivos Terraform?
+
+| Archivo            | Función                                                        | ¿Se modifica mucho? |
+| ------------------ | -------------------------------------------------------------- | ------------------- |
+| `provider.tf`      | Configura el proveedor que usará Terraform (AWS en este caso). | Poco                |
+| `versions.tf`      | Define las versiones mínimas de Terraform y del proveedor AWS. | Muy poco            |
+| `main.tf`          | Contiene los recursos principales que se crearán en AWS.       | Mucho               |
+| `variables.tf`     | Declara las variables que utilizará el proyecto.               | Poco                |
+| `terraform.tfvars` | Asigna valores a las variables definidas en `variables.tf`.    | Bastante            |
+| `outputs.tf`       | Muestra información útil al terminar el despliegue.            | Poco                |
+
+
+
+
+
+---
+
+# Resultado esperado
+
+Al finalizar el laboratorio Tendremos lo siguiente:
+
+```
+Internet
+     │
+     ▼
+https://xxxxxxxx.cloudfront.net
+     │
+     ▼
+Página web estática funcionando
+```
+
+---
+
+# Servicios que se usan
+- Amazon S3
+- Static Website Hosting
+- Bucket Policies
+- CloudFront
+- IAM
+- AWS CLI
+- Terraform
+- Git
+- GitHub
+
+---
+
+# Diagrama Estructural
+![alt text](image.png)
+
+
+
+---
+---
+---
+
+
+
+# Creación del Lab en la consola de AWS
+
+
+### Bucket S3
+
+S3 nos permite almacenar datos como objetos, dentro de S3 se crean lo que se llaman buckets; estos buckets o cubos/cajones como queramos llamarlos nos permitirá guardar todos los archivos necesarios para nuestra página web para posteriormente pasar a su Web Hosting integrado.
+
+Crearemos un bucket donde meteremos todos nuestros archivos necesarios para nuestra sencilla página web estática:
+![alt text](image-1.png)
+
+Logramos una arquitectura con Cloudfront + OAC, así que podemos dejar el bloqueo al acceso público activado(es la mejor práctica). Se explicará lo que es OAC en Cloudfront más en siguientes apartados.
+
+
+## Subida de archivos web al bucket creado
+
+Tras tener el bucket creado, subiremos los archivos de nuestra página web, en mi caso es una web creada con IA para ahorrar tiempo en este pequeño laboratorio, es sencilla pero esta configuración y estructura puede entrar también dentro de páginas web de pymes etc.
+

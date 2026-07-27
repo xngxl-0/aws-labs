@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores del Mundo - Restaurante Gourmet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header con Navegación Sticky -->
+    <header class="header-sticky">
+        <div class="navbar-container">
+            <div class="logo">🍴 Sabores del Mundo</div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section Mejorada -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sabores del Mundo</h1>
+            <p class="hero-subtitle">Experiencia culinaria sin fronteras</p>
+            <a href="#menu" class="cta-button">Descubre nuestro Menú</a>
+        </div>
+    </section>
+
+    <!-- Sección de Características -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Comida Fresca</h3>
+            <p>Ingredientes de primera calidad seleccionados diariamente</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-award"></i>
+            <h3>Calidad Premium</h3>
+            <p>Recetas tradicionales con técnicas modernas</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-smile"></i>
+            <h3>Servicio Excepcional</h3>
+            <p>Atención personalizada en cada visita</p>
+        </div>
+    </section>
+
+    <!-- Sección de Menú Expandida -->
+    <section id="menu" class="menu-section">
+        <h2>Nuestro Menú</h2>
+        
+        <!-- Filtros de Categorías -->
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="platos">Platos Principales</button>
+            <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            <button class="filter-btn" data-filter="postres">Postres</button>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Platos Principales -->
+            <div class="menu-item" data-category="platos">
+                <div class="menu-item-img">
+                    <img src="https://plus.unsplash.com/premium_photo-1719522017304-e56503664ffd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Paella Valenciana">
+                    <span class="badge">Favorito</span>
+                </div>
+                <div class="menu-item-content">
+                    <h3>Paella Valenciana</h3>
+                    <p>Arroz, pollo, conejo y verduras frescas de temporada</p>
+                    <div class="rating">★★★★★ (45 reseñas)</div>
+                    <span class="price">14.90€</span>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="platos">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Hamburguesa Gourmet">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Hamburguesa Gourmet</h3>
+                    <p>Carne Angus, queso cheddar artesanal y pan con semillas</p>
+                    <div class="rating">★★★★☆ (38 reseñas)</div>
+                    <span class="price">11.50€</span>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="platos">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=300&fit=crop" alt="Tacos Mexicanos">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Tacos Mexicanos</h3>
+                    <p>Carne especiada, cilantro fresco y lima</p>
+                    <div class="rating">★★★★★ (52 reseñas)</div>
+                    <span class="price">9.90€</span>
+                </div>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="menu-item" data-category="bebidas">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1581074817932-af423ba4566e?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Agua Fresca de Sandía">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Agua Fresca de Sandía</h3>
+                    <p>Bebida tradicional mexicana refrescante y saludable</p>
+                    <span class="price">3.50€</span>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="bebidas">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smoothie Tropical">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Smoothie Tropical</h3>
+                    <p>Mezcla de frutas exóticas, coco y miel</p>
+                    <span class="price">5.90€</span>
+                </div>
+            </div>
+
+  
+            <div class="menu-item" data-category="postres">
+                <div class="menu-item-img">
+                    <img src="https://plus.unsplash.com/premium_photo-1713687789756-b38c7870eef6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Churros con Chocolate">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Churros con Chocolate</h3>
+                    <p>Churros crujientes acompañados de chocolate caliente</p>
+                    <span class="price">5.50€</span>
+                </div>
+            </div>
+
+            <!-- Más Platos Principales -->
+            <div class="menu-item" data-category="platos">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Salmón a la Mantequilla">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Salmón a la Mantequilla</h3>
+                    <p>Salmón fresco con salsa de limón y verduras asadas</p>
+                    <div class="rating">★★★★★ (41 reseñas)</div>
+                    <span class="price">18.90€</span>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="platos">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&h=300&fit=crop" alt="Costillas BBQ">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Costillas BBQ</h3>
+                    <p>Costillas ahumadas con salsa BBQ casera y papas</p>
+                    <div class="rating">★★★★★ (56 reseñas)</div>
+                    <span class="price">16.50€</span>
+                </div>
+            </div>
+
+    
+
+            <!-- Más Bebidas -->
+            <div class="menu-item" data-category="bebidas">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop" alt="Café Espresso">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Café Espresso</h3>
+                    <p>Café espresso clásico italiano recién preparado</p>
+                    <span class="price">2.50€</span>
+                </div>
+            </div>
+
+
+        
+            <!-- Más Postres -->
+
+
+            <div class="menu-item" data-category="postres">
+                <div class="menu-item-img">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Mousse de Chocolate">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Mousse de Chocolate</h3>
+                    <p>Mousse de chocolate negro y blanco capas</p>
+                    <span class="price">5.90€</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Imágenes -->
+    <section id="galeria" class="gallery-section">
+        <h2>Galería</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://plus.unsplash.com/premium_photo-1694557831389-ef7d9326fb71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Galería 1">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400&h=300&fit=crop" alt="Galería 2">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Galería 3">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1744793981680-1914b08bf994?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Galería 4">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros Expandida -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Nuestra Historia</h2>
+                <p>Desde hace más de 20 años, <strong>Sabores del Mundo</strong> ha sido un referente en la gastronomía de calidad. Comenzamos como un pequeño restaurante familiar con la pasión de compartir los mejores sabores del mundo.</p>
+                <p>Nuestro chef principal, con experiencia en las mejores cocinas europeas, ha diseñado un menú único que combina tradición e innovación.</p>
+                <h3>Por qué elegirnos</h3>
+                <ul class="about-list">
+                    <li><i class="fas fa-check"></i> Ingredientes frescos y locales</li>
+                    <li><i class="fas fa-check"></i> Chef con 15 años de experiencia</li>
+                    <li><i class="fas fa-check"></i> Ambiente acogedor y familiar</li>
+                    <li><i class="fas fa-check"></i> Servicio atento y personalizado</li>
+                </ul>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>20+</h3>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat">
+                    <h3>5000+</h3>
+                    <p>Clientes satisfechos</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Platos diferentes</p>
+                </div>
+                <div class="stat">
+                    <h3>4.8/5</h3>
+                    <p>Calificación promedio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios" class="testimonials-section">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Excelente comida y un ambiente muy agradable. ¡Volveré sin duda!"</p>
+                <h4>María García</h4>
+                <span>Cliente habitual</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"La mejor paella que he probado. El servicio fue impecable."</p>
+                <h4>Juan López</h4>
+                <span>Crítico gastronómico</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★☆</div>
+                <p>"Un lugar perfecto para cenas especiales. Muy recomendado."</p>
+                <h4>Ana Rodríguez</h4>
+                <span>Visitante de viaje</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Horarios y Reservas -->
+    <section class="schedule-section">
+        <div class="schedule-content">
+            <div class="schedule-card">
+                <h3><i class="fas fa-clock"></i> Horarios</h3>
+                <p><strong>Lunes a Viernes:</strong> 12:00 - 23:00</p>
+                <p><strong>Sábado:</strong> 12:00 - 00:00</p>
+                <p><strong>Domingo:</strong> 12:00 - 22:00</p>
+                <p class="closed">Cerrado: Algunos festivos</p>
+            </div>
+            <div class="schedule-card">
+                <h3><i class="fas fa-phone"></i> Contacto Rápido</h3>
+                <p><strong>Teléfono:</strong> 600 123 456</p>
+                <p><strong>WhatsApp:</strong> 600 123 456</p>
+                <button class="reserve-btn">Reservar Mesa</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto Completa -->
+    <section id="contact" class="contact-section">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Dirección</h4>
+                        <p>Calle Mayor 123, Madrid 28001</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+34 600 123 456</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contacto@saboresdelmundo.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form>
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <input type="text" placeholder="Asunto" required>
+                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <h2>Suscríbete a nuestro Newsletter</h2>
+        <p>Recibe nuestras promociones y nuevos platos directamente en tu email</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Tu email" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+    </section>
+
+    <!-- Footer Mejorado -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sabores del Mundo</h4>
+                <p>Experiencia culinaria sin fronteras desde 2004</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sabores del Mundo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
