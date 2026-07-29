@@ -229,4 +229,4 @@ https://d1prrhe2wjp8xa.cloudfront.net/
 ![alt text](../Imagenes/image-11.png)
 
 
-Tras haber comprobado el correcto funcionamiento del enlace, podemos decir que tenemos nuestra página web estática lista. En caso de querer tenerla registrada con un nombre de dominio y Certificados gestionados por AWS se necesita incluir servicios como route 53 DNS y AWS ACM para gestionar los certificados públicos para dominios que exactamente sean públicos. 
+Tras haber comprobado el correcto funcionamiento del enlace, podemos decir que tenemos nuestra página web estática lista. En caso de querer tenerla registrada con un nombre de dominio y Certificados gestionados por AWS se necesita incluir servicios como route 53 DNS y AWS ACM para gestionar los certificados públicos para dominios que exactamente sean públicos.
