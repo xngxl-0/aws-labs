@@ -230,3 +230,33 @@ https://d1prrhe2wjp8xa.cloudfront.net/
 
 
 Tras haber comprobado el correcto funcionamiento del enlace, podemos decir que tenemos nuestra página web estática lista. En caso de querer tenerla registrada con un nombre de dominio y Certificados gestionados por AWS se necesita incluir servicios como route 53 DNS y AWS ACM para gestionar los certificados públicos para dominios que exactamente sean públicos.
+
+---
+
+
+## ¿Puedo hacerlo con un solo click?
+Claro, para eso tenemos lo que es la famosa infraestructura como código (IAC), nos permite definir todos los servicios y parámetros deseados en lenguaje declarativo.
+ 
+En este caso lo haremos con la herramienta Terraform que lo vemos en el directorio llamado Terraform.
+ 
+### ¿Qué es?
+
+Terraform aplica infraestructura como código IAC normalmente utilizada por DevOps.
+Terraform es una herramienta para automatizar la creación, gestión y configuración de infraestructura de manera declarativa.
+
+Lee todos los archivos automáticamente que acaban en ".tf" del directorio. 
+
+## ¿Cómo funcionan los archivos Terraform?
+
+| Archivo            | Función                                                        | ¿Se modifica mucho? |
+| ------------------ | -------------------------------------------------------------- | ------------------- |
+| `provider.tf`      | Configura el proveedor que usará Terraform (AWS en este caso). | Poco                |
+| `versions.tf`      | Define las versiones mínimas de Terraform y del proveedor AWS. | Muy poco            |
+| `main.tf`          | Contiene los recursos principales que se crearán en AWS.       | Mucho               |
+| `variables.tf`     | Declara las variables que utilizará el proyecto.               | Poco                |
+| `terraform.tfvars` | Asigna valores a las variables definidas en `variables.tf`.    | Bastante            |
+| `outputs.tf`       | Muestra información útil al terminar el despliegue.            | Poco                |
+
+
+
+Se puede ver el código en el direcotrio llamado "Terraform".
