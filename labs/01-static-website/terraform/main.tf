@@ -41,13 +41,3 @@ resource "aws_s3_object" "javascript" {
 }
 
 
-###Imagenes que se suben al bucket con for-each###
-resource "aws_s3_object" "images" {
-  for_each     = fileset("../Imagenes/", "*.png")
-  bucket       = aws_s3_bucket.bucket.id
-  key          = "imagenes/${each.value}"
-  source       = "../Imagenes/${each.value}"
-  etag         = filemd5("../Imagenes/${each.value}")
-  content_type = "image/png"
-}   
-
