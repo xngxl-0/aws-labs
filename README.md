@@ -15,12 +15,12 @@ Repositorio donde documento mi aprendizaje práctico de AWS, Terraform y Docker 
 
 | Nº | Proyecto | Estado |
 |----|----------|--------|
-| 01 | Static Website (S3) | 🚧 En progreso |
-| 02 | VPC | ⏳ Pendiente |
-| 03 | EC2 | ⏳ Pendiente |
-| 04 | CloudWatch | ⏳ Pendiente |
-| 05 | IAM | ⏳ Pendiente |
-| 06 | Lambda | ⏳ Pendiente |
-| 07 | ECS | ⏳ Pendiente |
-| 08 | CI/CD | ⏳ Pendiente |
-| 09 | Proyecto Final | ⏳ Pendiente |
+| 01 | Static Website (S3) |  Hecho |
+| 02 | VPC |  Pendiente |
+| 03 | EC2 |  Pendiente |
+| 04 | CloudWatch |  Pendiente |
+| 05 | IAM |  Pendiente |
+| 06 | Lambda |  Pendiente |
+| 07 | ECS |  Pendiente |
+| 08 | CI/CD |  Pendiente |
+| 09 | Proyecto Final |  Pendiente |
