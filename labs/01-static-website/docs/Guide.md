@@ -257,7 +257,94 @@ Lee todos los archivos automáticamente que acaban en ".tf" del directorio.
 | `terraform.tfvars` | Asigna valores a las variables definidas en `variables.tf`.    | Bastante            |
 | `outputs.tf`       | Muestra información útil al terminar el despliegue.            | Poco                |
 
+---
+---
+---
+-
+-
+-
+----
 
 
-Se puede ver el código en el direcotrio llamado "Terraform".
+# Creación automatizada
+
+Se puede ver el código en el directorio llamado "Terraform".
+
+## Comando usados
+
+| Comando                                               | Función                                                                            | Ejemplo                                        |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `terraform init`                                      | Inicializa el proyecto, descarga los providers y módulos.                          | `terraform init`                               |
+| `terraform fmt`                                       | Formatea el código siguiendo el estilo oficial.                                    | `terraform fmt`                                |
+| `terraform validate`                                  | Comprueba que la sintaxis del código es válida.                                    | `terraform validate`                           |
+| `terraform plan`                                      | Genera un plan de ejecución. Muestra los cambios que se realizarán sin aplicarlos. | `terraform plan`                               |
+| `terraform apply`                                     | Aplica los cambios en la infraestructura.                                          | `terraform apply`                              |
+| `terraform destroy`                                   | Elimina todos los recursos creados por Terraform.                                  | `terraform destroy`                            |
+| `terraform output`                                    | Muestra los valores definidos en `outputs.tf`.                                     | `terraform output`                             |
+| `terraform show`                                      | Muestra el estado o un plan de Terraform.                                          | `terraform show`                               |
+| `terraform state list`                                | Lista todos los recursos almacenados en el estado.                                 | `terraform state list`                         |
+| `terraform state show`                                | Muestra la información de un recurso del estado.                                   | `terraform state show aws_s3_bucket.web`       |
+| `terraform import`                                    | Importa un recurso existente al estado de Terraform.                               | `terraform import aws_s3_bucket.web mi-bucket` |
+| `terraform taint` _(obsoleto en versiones recientes)_ | Marca un recurso para recrearlo.                                                   | `terraform taint aws_instance.web`             |
+| `terraform workspace list`                            | Lista los workspaces disponibles.                                                  | `terraform workspace list`                     |
+| `terraform workspace new`                             | Crea un nuevo workspace.                                                           | `terraform workspace new dev`                  |
+| `terraform workspace select`                          | Cambia de workspace.                                                               | `terraform workspace select prod`              |
+| `terraform version`                                   | Muestra la versión instalada.                                                      | `terraform version`                            |
+
+
+Tras tener todo creado y automatizado con Terraform y el código revisado vamos a probarlo:
+
+```terraform plan```
+ que nos muestra los recursos a crear antes de nada (no se incluye capturas de los demás para resumir el documento):
+
+la política del bucket:
+![alt text](../Imagenes/image12.png)
+
+
+Los objetos que se crearán dentro del bucket
+![alt text](../Imagenes/image13.png)
+
+
+La distribución de cloudfront
+![alt text](../Imagenes/image14.png)
+
+
+---
+
+## Creación de los recursos y comprobación
+
+
+``terraform apply``  Creará los recusos para luego pasar a comprobarlos.
+![alt text](../Imagenes/image15.png)
+
+Nos sale el nombre de dominio que cloudfront dió a nuestra web estática ya que en el archivo de outputs.tf de terraform pusimos el siguiente código para que lanzara el Domain Name al aplicarse todo:
+
+``` hcl
+output "cloudfront_domain_name" {
+  value = aws_cloudfront_distribution.website.domain_name
+}
+
+```
+
+
+---
+----
+---
+
+# Comprobación Final de la creación
+
+Nos dirigimos a la consola y verificamos que todo esté creado como lo especifiqué:
+
+### Bucket S3 listo:
+![alt text](../Imagenes/image19.png)
+
+### Bucket Policy listo
+
+![alt text](../Imagenes/image16.png)
+
+### Distribución de cloudfront lista y funcionando
+
+![alt text](../Imagenes/image17.png)
+
+![alt text](../Imagenes/image18.png)
 
