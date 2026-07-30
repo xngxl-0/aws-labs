@@ -1,4 +1,12 @@
-# Servicios AWS utilizados
+# Web estática accesible desde internet
+
+enlace a las web simulada creada tanto con Terraform como en la consola de AWS:
+
+https://d2jaxo62pny2fb.cloudfront.net
+https://d1prrhe2wjp8xa.cloudfront.net
+
+---
+
 
 |Servicio|Función|
 |---|---|
