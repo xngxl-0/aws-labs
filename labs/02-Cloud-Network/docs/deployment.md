@@ -191,7 +191,17 @@ Si esta asociación fuese incorrecta, la comunicación de la red dejaría de fun
 
 
 ---
+# Comprobaciones de la comunicación
 
+Dentro de subred pública he creado una instancia. En cambio en la privada consta de 2 instancias, esto ya que quiero que se vea que la comunicación entre instancias de distinta red no es efectiva, por otro lado en la misma red sí. 
+
+![alt text](image.png)
+
+
+Se verifica que las instancias de la subred privada se comunican y acceden a internet pero no son accesibles desde este por lo que claramente no constan de Ips públicas.
+
+---
+---
 ---
 
 # Conclusiones
