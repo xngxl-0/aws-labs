@@ -88,7 +88,7 @@ En los siguientes laboratorios esta subred alojará recursos como servidores web
 
 
 Para crear la subred pública se da por hecho que sabemos que debemos asociarla a nuestra VPC, y así sucede con cada recurso dentro de nuestra VPC.
-![alt text](image.png)
+![alt text](/aws-labs/labs/02-Cloud-Network/images/Public%20Subnet.jpg)
 
 La subured pública es la que contendrá los servicios como el Internet Gateway, y el Nat Gateway
 
@@ -105,7 +105,7 @@ Una subred privada está diseñada para alojar recursos que no deben ser accesib
 
 Los recursos pueden seguir descargando actualizaciones gracias al NAT Gateway, pero no reciben conexiones entrantes desde el exterior.
 
-![alt text](image.png)
+![alt text](/aws-labs/labs/02-Cloud-Network/images/Private%20Subnet.jpg)
 
 Aquí suelen desplegarse:
 
@@ -135,7 +135,7 @@ Una Elastic IP es una dirección IPv4 pública estática.
 
 En este laboratorio será utilizada por el NAT Gateway para que los recursos privados puedan acceder a Internet.
 
-![alt text](image.png)
+![alt text](/aws-labs/labs/02-Cloud-Network/images/Elastic%20Ip.jpg)
 
 Debe verse:
 
@@ -148,25 +148,7 @@ Debe verse:
 
 El NAT Gateway permite que los recursos ubicados en la subred privada puedan salir a Internet sin ser accesibles desde el exterior.
 
-Gracias a él, un servidor privado puede:
-
-* Descargar actualizaciones.
-* Instalar paquetes.
-* Acceder a servicios externos.
-
-Sin embargo, ningún equipo desde Internet podrá iniciar conexiones hacia él.
-
----
-
-## Captura 6
-
-**Captura del NAT Gateway.**
-
-Debe verse:
-
-* Estado Available
-* Elastic IP asociada
-* Public Subnet
+![alt text](image.png)
 
 ---
 
@@ -182,17 +164,7 @@ La tabla pública contiene una ruta hacia el Internet Gateway.
 
 Gracias a ella, cualquier recurso de la subred pública puede acceder a Internet.
 
----
-
-## Captura 7
-
-**Captura de la Public Route Table.**
-
-Debe verse claramente:
-
-* Destino local
-* Ruta 0.0.0.0/0
-* Internet Gateway
+![alt text](image-1.png)
 
 ---
 
@@ -201,18 +173,8 @@ Debe verse claramente:
 La tabla privada envía el tráfico destinado a Internet hacia el NAT Gateway.
 
 De esta forma, las instancias privadas pueden salir a Internet sin exponerse públicamente.
+![alt text](image.png)
 
----
-
-## Captura 8
-
-**Captura de la Private Route Table.**
-
-Debe verse:
-
-* Ruta local
-* Ruta 0.0.0.0/0
-* NAT Gateway
 
 ---
 
@@ -226,80 +188,9 @@ La subred privada utilizará la tabla privada.
 
 Si esta asociación fuese incorrecta, la comunicación de la red dejaría de funcionar correctamente.
 
----
 
-## Captura 9
-
-**Captura de las Route Table Associations.**
-
-Debe apreciarse qué subred está asociada a cada tabla.
 
 ---
-
-# Despliegue con Terraform
-
-Una vez preparados todos los archivos del proyecto se inicializa Terraform.
-
-```bash
-terraform init
-```
-
-Posteriormente se valida la configuración.
-
-```bash
-terraform validate
-```
-
-Se genera el plan de ejecución.
-
-```bash
-terraform plan
-```
-
-Finalmente se despliega toda la infraestructura.
-
-```bash
-terraform apply
-```
-
-Terraform mostrará todos los recursos que va a crear antes de realizar ningún cambio.
-
----
-
-## Captura 10
-
-**Salida del comando `terraform plan`.**
-
-Debe verse el resumen indicando los recursos que serán creados.
-
----
-
-## Captura 11
-
-**Salida del comando `terraform apply`.**
-
-Debe apreciarse el mensaje indicando que la infraestructura se ha creado correctamente.
-
----
-
-# Outputs
-
-Terraform devuelve información útil una vez finaliza el despliegue.
-
-Entre ella pueden encontrarse:
-
-* ID de la VPC.
-* ID de las subredes.
-* ID del NAT Gateway.
-* ID del Internet Gateway.
-
-Estos valores facilitan reutilizar la infraestructura en laboratorios posteriores.
-
----
-
-## Captura 12
-
-**Salida de los outputs de Terraform tras finalizar el despliegue.**
 
 ---
 
@@ -309,4 +200,3 @@ Este laboratorio ha servido para comprender los componentes fundamentales de una
 
 Aunque la infraestructura es sencilla, representa la base sobre la que se desplegarán los siguientes laboratorios del repositorio. A partir de esta VPC será posible añadir instancias EC2, balanceadores de carga, bases de datos y otros servicios sin necesidad de rediseñar la red.
 
-Además, el uso de Terraform permite definir toda la infraestructura como código, facilitando su reproducción, mantenimiento y versionado mediante Git.
