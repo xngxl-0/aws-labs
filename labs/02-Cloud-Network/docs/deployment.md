@@ -148,7 +148,7 @@ Debe verse:
 
 El NAT Gateway permite que los recursos ubicados en la subred privada puedan salir a Internet sin ser accesibles desde el exterior.
 
-![alt text](image.png)
+![alt text](../images/NAT%20Gateway.jpg)
 
 ---
 
@@ -164,7 +164,7 @@ La tabla pública contiene una ruta hacia el Internet Gateway.
 
 Gracias a ella, cualquier recurso de la subred pública puede acceder a Internet.
 
-![alt text](image-1.png)
+![alt text](../images/Public%20RT.jpg)
 
 ---
 
@@ -173,7 +173,7 @@ Gracias a ella, cualquier recurso de la subred pública puede acceder a Internet
 La tabla privada envía el tráfico destinado a Internet hacia el NAT Gateway.
 
 De esta forma, las instancias privadas pueden salir a Internet sin exponerse públicamente.
-![alt text](image.png)
+![alt text](../images/Private%20RT.jpg)
 
 
 ---
@@ -195,10 +195,20 @@ Si esta asociación fuese incorrecta, la comunicación de la red dejaría de fun
 
 Dentro de subred pública he creado una instancia. En cambio en la privada consta de 2 instancias, esto ya que quiero que se vea que la comunicación entre instancias de distinta red no es efectiva, por otro lado en la misma red sí. 
 
-![alt text](image.png)
+![alt text](../images/EC2s.jpg)
 
 
-Se verifica que las instancias de la subred privada se comunican y acceden a internet pero no son accesibles desde este por lo que claramente no constan de Ips públicas.
+Se verifica que las instancias de la subred privada se comunican y acceden a internet pero no son accesibles desde este por lo que claramente no constan de Ips públicas:
+
+Ping a google:
+![alt text](../images/Conexion%20a%20internet.jpg)
+
+Ping de una instancia a otra para verificar que no se comunican ya que no estan en la misma subred:
+
+![alt text](../images/Ping%20simul.jpg)
+
+Se puede verificar que podemos acceder a la instancia pública a través de internet:
+![alt text](../images/Acceso%20WEB%20instancia%20publica.jpg)
 
 ---
 ---
