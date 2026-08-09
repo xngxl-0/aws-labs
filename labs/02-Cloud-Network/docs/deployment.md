@@ -45,7 +45,7 @@ Todos los recursos que despleguemos en los siguientes apartados vivirán dentro 
 
 ### Creación: lab02-vpc
 
-![**Captura de la VPC creada desde la consola de AWS.**](<../images/VPC creada.jpg>)
+![alt text](../images/VPC%20creada.jpg)
 
 
 
@@ -88,7 +88,7 @@ En los siguientes laboratorios esta subred alojará recursos como servidores web
 
 
 Para crear la subred pública se da por hecho que sabemos que debemos asociarla a nuestra VPC, y así sucede con cada recurso dentro de nuestra VPC.
-![alt text](/aws-labs/labs/02-Cloud-Network/images/Public%20Subnet.jpg)
+![alt text](../images/Public%20Subnet.jpg)
 
 La subured pública es la que contendrá los servicios como el Internet Gateway, y el Nat Gateway
 
@@ -105,7 +105,7 @@ Una subred privada está diseñada para alojar recursos que no deben ser accesib
 
 Los recursos pueden seguir descargando actualizaciones gracias al NAT Gateway, pero no reciben conexiones entrantes desde el exterior.
 
-![alt text](/aws-labs/labs/02-Cloud-Network/images/Private%20Subnet.jpg)
+![alt text](../images/Private%20Subnet.jpg)
 
 Aquí suelen desplegarse:
 
@@ -135,7 +135,7 @@ Una Elastic IP es una dirección IPv4 pública estática.
 
 En este laboratorio será utilizada por el NAT Gateway para que los recursos privados puedan acceder a Internet.
 
-![alt text](/aws-labs/labs/02-Cloud-Network/images/Elastic%20Ip.jpg)
+![alt text](../images/Elastic%20Ip.jpg)
 
 Debe verse:
 
