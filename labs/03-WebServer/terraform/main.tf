@@ -3,7 +3,7 @@ resource "aws_security_group" "Web-SG-Terraform"{
     description = "Security group para el servidor web creado con Terraform"
     vpc_id = var.VPC_id
 
-    ingress = {
+    ingress  {
         description = "HTPP"
         from_port = 80
         to_port = 80
@@ -18,6 +18,15 @@ resource "aws_security_group" "Web-SG-Terraform"{
         protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
+
+
+      egress {
+    description = "Permitir comunicacion externa"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
 }
 
